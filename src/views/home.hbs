@@ -1,0 +1,36 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style.css" />
+		<title>Home</title>
+	</head>
+	<body>
+		<h1>Assignments</h1>
+		<table>
+			<thead>
+				<th>Assignment</th>
+				<th>Score</th>
+				<th>Total</th>
+				<th>Completed</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+				{{! loop start }}
+				<tr>
+					<td>Assignment</td>
+					<td>Score</td>
+					<td>Total</td>
+					<td>Completed</td>
+					<td>Actions</td>
+				</tr>
+				{{! loop end }}
+			</tbody>
+		</table>
+		<p><span class="bold">Overall Average: </span>
+			{{! Average Here  }}
+		</p>
+		<p><a href="/add">Add an Assignment</a></p>
+	</body>
+</html>
