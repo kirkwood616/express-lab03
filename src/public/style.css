@@ -5,6 +5,11 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+a:link,
+a:visited {
+	color: mediumblue;
+}
+
 table {
 	border-collapse: collapse;
 }
