@@ -10,16 +10,20 @@
 		<h1>Assignment Added</h1>
 		<p>This assignment was added.</p>
 		<p><span class="bold">Name:</span>
-			{{! Name Here }}
+			{{assignment.name}}
 		</p>
 		<p><span class="bold">Score:</span>
-			{{! Score Here }}
+			{{assignment.score}}
 		</p>
 		<p><span class="bold">Total:</span>
-			{{! Total Here }}
+			{{assignment.possible}}
 		</p>
 		<p><span class="bold">Completed:</span>
-			{{! Completed Here }}
+			{{#if assignment.completed}}
+				Yes
+			{{else}}
+				No
+			{{/if}}
 		</p>
 		<p><a href="/">See all Assignments</a></p>
 	</body>

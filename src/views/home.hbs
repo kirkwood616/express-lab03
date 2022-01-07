@@ -17,15 +17,19 @@
 				<th>Actions</th>
 			</thead>
 			<tbody>
-				{{! loop start }}
-				<tr>
-					<td>Assignment</td>
-					<td>Score</td>
-					<td>Total</td>
-					<td>Completed</td>
-					<td>Actions</td>
-				</tr>
-				{{! loop end }}
+				{{#each assignments}}
+					<tr>
+						<td>{{name}}</td>
+						<td>{{score}}</td>
+						<td>{{possible}}</td>
+						{{#if completed}}
+							<td>✔</td>
+						{{else}}
+							<td></td>
+						{{/if}}
+						<td>Actions</td>
+					</tr>
+				{{/each}}
 			</tbody>
 		</table>
 		<p><span class="bold">Overall Average: </span>
