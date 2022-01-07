@@ -37,5 +37,26 @@ export function findAverage(data: Assignment[]): number {
 	let completed: Assignment[] = data.filter((item) => item.completed === true);
 	completed.forEach((item) => (scoreTotal += item.score));
 	completed.forEach((item) => (possibleTotal += item.possible));
-	return Math.round((scoreTotal / possibleTotal) * 100 * 10) / 10;
+	let average = Math.round((scoreTotal / possibleTotal) * 100 * 10) / 10;
+	return average ? average : 0;
+}
+
+export function findAverageSummary(data: Assignment[]): number {
+	let scoreTotal: number = 0;
+	let possibleTotal: number = 0;
+	let completed: Assignment[] = data.filter((item) => item.completed === true);
+	completed.forEach((item) => (scoreTotal += item.score));
+	completed.forEach((item) => (possibleTotal += item.possible));
+	let average = (scoreTotal / possibleTotal) * 100;
+	return average ? average : 0;
+}
+
+export function deleteAssignment(id: number): boolean {
+	const index = data.findIndex((item) => item.id === id);
+	if (index == -1) {
+		return false;
+	} else {
+		data.splice(index, 1);
+		return true;
+	}
 }

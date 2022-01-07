@@ -3,6 +3,8 @@ import path from "path";
 import homeRoutes from "./routes/home";
 import addRoutes from "./routes/add";
 import addedRoutes from "./routes/added";
+import deleteRoutes from "./routes/delete";
+import apiRoutes from "./routes/api";
 
 const app = express();
 
@@ -19,6 +21,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", homeRoutes);
 app.use("/", addRoutes);
 app.use("/", addedRoutes);
+app.use("/", deleteRoutes);
+app.use("/", apiRoutes);
+
+// 404 Not Found for non-routes
+app.use((req, res) => {
+	res.status(404).render("404");
+});
 
 const port = 3000;
 app.listen(port, () => console.log(`Listening on port: ${port}.`));
