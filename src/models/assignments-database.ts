@@ -1,13 +1,13 @@
 import Assignment from "./Assignment";
 
-let nextId: number;
+let nextId: number = 1;
 export let data: Assignment[] = [];
 
 createAssignment({ name: "WW1 Quiz", score: 5, possible: 10, completed: true });
-createAssignment({ name: "WW1 Test", score: 7, possible: 10, completed: true });
+createAssignment({ name: "WW1 Test", score: 8, possible: 10, completed: true });
 createAssignment({
 	name: "WW2 Quiz",
-	score: 10,
+	score: 0,
 	possible: 15,
 	completed: false,
 });
@@ -34,10 +34,8 @@ export function assignmentById(id: number): Assignment | undefined {
 export function findAverage(data: Assignment[]): number {
 	let scoreTotal: number = 0;
 	let possibleTotal: number = 0;
-
-	data.forEach((item) => (scoreTotal += item.score));
-	data.forEach((item) => (possibleTotal += item.possible));
-	let average: number = (scoreTotal / possibleTotal) * 100;
-
-	return Math.round(average * 10) / 10;
+	let completed: Assignment[] = data.filter((item) => item.completed === true);
+	completed.forEach((item) => (scoreTotal += item.score));
+	completed.forEach((item) => (possibleTotal += item.possible));
+	return Math.round((scoreTotal / possibleTotal) * 100 * 10) / 10;
 }

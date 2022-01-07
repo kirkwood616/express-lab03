@@ -12,6 +12,9 @@ a:visited {
 
 table {
 	border-collapse: collapse;
+	background-color: whitesmoke;
+	border: 2px solid black;
+	box-shadow: 2px 2px 0px black;
 }
 th,
 td {
