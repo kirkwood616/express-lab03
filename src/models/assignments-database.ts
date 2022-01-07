@@ -37,17 +37,7 @@ export function findAverage(data: Assignment[]): number {
 	let completed: Assignment[] = data.filter((item) => item.completed === true);
 	completed.forEach((item) => (scoreTotal += item.score));
 	completed.forEach((item) => (possibleTotal += item.possible));
-	let average = Math.round((scoreTotal / possibleTotal) * 100 * 10) / 10;
-	return average ? average : 0;
-}
-
-export function findAverageSummary(data: Assignment[]): number {
-	let scoreTotal: number = 0;
-	let possibleTotal: number = 0;
-	let completed: Assignment[] = data.filter((item) => item.completed === true);
-	completed.forEach((item) => (scoreTotal += item.score));
-	completed.forEach((item) => (possibleTotal += item.possible));
-	let average = (scoreTotal / possibleTotal) * 100;
+	let average = scoreTotal / possibleTotal;
 	return average ? average : 0;
 }
 

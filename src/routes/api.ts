@@ -1,8 +1,5 @@
 import express from "express";
-import {
-	allAssignments,
-	findAverageSummary,
-} from "../models/assignments-database";
+import { allAssignments, findAverage } from "../models/assignments-database";
 
 const routes = express.Router();
 
@@ -14,7 +11,7 @@ routes.get("/api/assignments", (req, res) => {
 routes.get("/api/summary", (req, res) => {
 	const assignments = allAssignments();
 	let summary = {
-		overallAverage: findAverageSummary(assignments),
+		overallAverage: findAverage(assignments) * 100,
 		assignments: allAssignments(),
 	};
 	res.status(200).json(summary);
