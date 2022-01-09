@@ -1,0 +1,17 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style.css" />
+		<title>Delete {{assignment.name}}?</title>
+	</head>
+	<body>
+		<h1>Delete assignment?</h1>
+		<p>Are you sure you want to delete this assignment?</p>
+		<p><span class="bold">Name: </span>{{assignment.name}}</p>
+		<p><a href="/delete/approve/{{assignment.id}}">Yes. Delete it.</a>
+			|
+			<a href="/">Nevermind</a></p>
+	</body>
+</html>
