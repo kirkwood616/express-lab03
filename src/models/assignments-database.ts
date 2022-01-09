@@ -50,3 +50,13 @@ export function deleteAssignment(id: number): boolean {
 		return true;
 	}
 }
+
+export function updateAssignment(assignment: Assignment): boolean {
+	const index = data.findIndex((i) => i.id === assignment.id);
+	if (index == -1) {
+		return false;
+	} else {
+		data[index] = assignment;
+		return true;
+	}
+}

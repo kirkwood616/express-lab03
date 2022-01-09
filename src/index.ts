@@ -5,6 +5,7 @@ import addRoutes from "./routes/add";
 import addedRoutes from "./routes/added";
 import deleteRoutes from "./routes/delete";
 import apiRoutes from "./routes/api";
+import editRoutes from "./routes/edit";
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use("/", addRoutes);
 app.use("/", addedRoutes);
 app.use("/", deleteRoutes);
 app.use("/", apiRoutes);
+app.use("/", editRoutes);
 
 // 404 Not Found for non-routes
 app.use((req, res) => {
