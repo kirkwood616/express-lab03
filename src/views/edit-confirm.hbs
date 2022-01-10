@@ -7,19 +7,21 @@
 		<title>Assignment Updated</title>
 	</head>
 	<body>
-		<h1>Assignment Updated</h1>
-		<p>This assignment has been updated.</p>
-		<p><span class="bold">Name: </span>{{assignment.name}}</p>
-		<p><span class="bold">Score: </span>{{assignment.score}}</p>
-		<p><span class="bold">Total Possible Score:
-			</span>{{assignment.possible}}</p>
-		<p><span class="bold">Completed: </span>
-			{{#if assignment.completed}}
-				Yes
-			{{else}}
-				No
-			{{/if}}
-		</p>
-		<p><a href="/">See all assignments</a></p>
+		<div id="container">
+			<h1>Assignment Updated</h1>
+			<p>This assignment has been updated.</p>
+			<p><span class="bold">Name: </span>{{assignment.name}}</p>
+			<p><span class="bold">Score: </span>{{assignment.score}}</p>
+			<p><span class="bold">Total Possible Score:
+				</span>{{assignment.possible}}</p>
+			<p><span class="bold">Completed: </span>
+				{{#if assignment.completed}}
+					Yes
+				{{else}}
+					No
+				{{/if}}
+			</p>
+			<p><a href="/">See all assignments</a></p>
+		</div>
 	</body>
 </html>

@@ -7,36 +7,41 @@
 		<title>Home</title>
 	</head>
 	<body>
-		<h1>Assignments</h1>
-		<table>
-			<thead>
-				<th>Assignment</th>
-				<th>Score</th>
-				<th>Total</th>
-				<th>Completed</th>
-				<th>Actions</th>
-			</thead>
-			<tbody>
-				{{#each assignments}}
-					<tr>
-						<td>{{name}}</td>
-						<td>{{score}}</td>
-						<td>{{possible}}</td>
-						{{#if completed}}
-							<td>✔</td>
-						{{else}}
-							<td></td>
-						{{/if}}
-						<td><a href="/edit/{{id}}">Edit</a>
-							|
-							<a href="/delete/{{id}}">Delete</a></td>
-					</tr>
-				{{/each}}
-			</tbody>
-		</table>
-		<p><span class="bold">Overall Average: </span>
-			{{average}}%
-		</p>
-		<p><a href="/add">Add an Assignment</a></p>
+		<div id="container">
+			<h1>Assignments</h1>
+			<table>
+				<thead>
+					<th>Assignment</th>
+					<th>Score</th>
+					<th>Total</th>
+					<th>Completed</th>
+					<th>Actions</th>
+				</thead>
+				<tbody>
+					{{#each assignments}}
+						<tr>
+							<td
+								style="word-wrap: break-word;"
+								class="columnName"
+							>{{name}}</td>
+							<td class="columnCenter">{{score}}</td>
+							<td class="columnCenter">{{possible}}</td>
+							{{#if completed}}
+								<td class="columnCenter"><span class="check">✔</span></td>
+							{{else}}
+								<td class="columnCenter"></td>
+							{{/if}}
+							<td class="columnCenter"><a href="/edit/{{id}}">Edit</a>
+								|
+								<a href="/delete/{{id}}">Delete</a></td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+			<p><span class="bold">Overall Average: </span>
+				{{average}}%
+			</p>
+			<p><a href="/add">Add an Assignment</a></p>
+		</div>
 	</body>
 </html>

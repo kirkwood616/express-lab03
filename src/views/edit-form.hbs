@@ -7,42 +7,52 @@
 		<title>Edit Assignment</title>
 	</head>
 	<body>
-		<h1>Edit Assignment</h1>
-		<form action="/edit-submit/{{assignment.id}}" method="post">
-			<p>
-				<label for="name"><span class="bold">Assignment Name: </span></label>
-				<input name="name" id="name" type="text" value="{{assignment.name}}" />
-			</p>
-			<p>
-				<label for="score"><span class="bold">Your Score: </span></label>
-				<input
-					name="score"
-					id="score"
-					value="{{assignment.score}}"
-					type="number"
-					min="0"
-				/>
-			</p>
-			<p>
-				<label for="possible"><span class="bold">Total Possible Score:
-					</span></label>
-				<input
-					name="possible"
-					id="possible"
-					value="{{assignment.possible}}"
-					type="number"
-					min="0"
-				/>
-			</p>
-			<p>
-				<input name="completed" id="completed" type="checkbox" />
-				<label for="completed"><span class="bold">Have you completed this
-						assignment?</span></label>
-			</p>
-			<p>
-				<input type="submit" value="Save" />
-				<a href="/">Nevermind</a>
-			</p>
-		</form>
+		<div id="container">
+			<h1>Edit Assignment</h1>
+			<form action="/edit-submit/{{assignment.id}}" method="post">
+				<p>
+					<label for="name"><span class="bold">Assignment Name: </span></label>
+					<input
+						name="name"
+						id="name"
+						type="text"
+						value="{{assignment.name}}"
+						placeholder="Assignment Name"
+					/>
+				</p>
+				<p>
+					<label for="score"><span class="bold">Your Score: </span></label>
+					<input
+						name="score"
+						id="score"
+						value="{{assignment.score}}"
+						type="number"
+						min="0"
+						placeholder="0"
+					/>
+				</p>
+				<p>
+					<label for="possible"><span class="bold">Total Possible Score:
+						</span></label>
+					<input
+						name="possible"
+						id="possible"
+						value="{{assignment.possible}}"
+						type="number"
+						min="0"
+						placeholder="0"
+					/>
+				</p>
+				<p>
+					<input name="completed" id="completed" type="checkbox" />
+					<label for="completed"><span class="bold">Have you completed this
+							assignment?</span></label>
+				</p>
+				<p>
+					<input type="submit" value="Save" />
+					<a href="/">Nevermind</a>
+				</p>
+			</form>
+		</div>
 	</body>
 </html>
