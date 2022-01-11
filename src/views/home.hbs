@@ -8,40 +8,53 @@
 	</head>
 	<body>
 		<div id="container">
-			<h1>Assignments</h1>
-			<table>
-				<thead>
-					<th>Assignment</th>
-					<th>Score</th>
-					<th>Total</th>
-					<th>Completed</th>
-					<th>Actions</th>
-				</thead>
-				<tbody>
-					{{#each assignments}}
-						<tr>
-							<td
-								style="word-wrap: break-word;"
-								class="columnName"
-							>{{name}}</td>
-							<td class="columnCenter">{{score}}</td>
-							<td class="columnCenter">{{possible}}</td>
-							{{#if completed}}
-								<td class="columnCenter"><span class="check">✔</span></td>
-							{{else}}
-								<td class="columnCenter"></td>
-							{{/if}}
-							<td class="columnCenter"><a href="/edit/{{id}}">Edit</a>
-								|
-								<a href="/delete/{{id}}">Delete</a></td>
-						</tr>
-					{{/each}}
-				</tbody>
-			</table>
-			<p><span class="bold">Overall Average: </span>
-				{{average}}%
-			</p>
-			<p><a href="/add">Add an Assignment</a></p>
+			<div id="container-top">
+				<h1>Assignments</h1>
+			</div>
+			<div id="container-main">
+				{{! <h1>Assignments</h1> }}
+				<table class="flex-table">
+					<thead>
+						<th>Assignment</th>
+						<th>Score</th>
+						<th>Total</th>
+						<th>Completed</th>
+						<th>Actions</th>
+					</thead>
+					<tbody>
+						{{#each assignments}}
+							<tr>
+								<td
+									style="word-wrap: break-word;"
+									class="columnName"
+									data-label="Assignment"
+								>{{name}}</td>
+								<td class="columnCenter" data-label="Score">{{score}}</td>
+								<td class="columnCenter" data-label="Total">{{possible}}</td>
+								{{#if completed}}
+									<td class="columnCenter" data-label="Completed"><span
+											class="check"
+										>✔</span></td>
+								{{else}}
+									<td class="columnCenter" data-label="Completed"><span
+											class="x"
+										>&cross;</span></td>
+								{{/if}}
+								<td class="columnCenter" data-label="Actions"><a
+										href="/edit/{{id}}"
+									>Edit</a>
+									|<a href="/delete/{{id}}">Delete</a></td>
+							</tr>
+						{{/each}}
+					</tbody>
+				</table>
+				<div id="bottom">
+					<p><span class="bold">Overall Average: </span>
+						{{average}}%
+					</p>
+					<p><a href="/add">Add an Assignment</a></p>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
